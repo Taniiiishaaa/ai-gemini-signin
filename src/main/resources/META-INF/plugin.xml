@@ -1,0 +1,36 @@
+<idea-plugin>
+    <id>com.tanisha.aigeminisignin</id>
+    <name>AI Gemini Sign-In</name>
+    <vendor email="you@example.com">Tanisha</vendor>
+    <version>0.0.1</version>
+    <description>This plugin adds a new action to the Tools menu that allows users to sign in to their AI Gemini account.</description>
+
+    <resource-bundle>messages.MyBundle</resource-bundle>
+
+    <actions>
+        <action
+                id="com.tanisha.aigeminisignin.SignInAction"
+                class="com.tanisha.aigeminisignin.SignInAction"
+                text="AI Gemini Sign-In"
+                description="Sign in to your AI Gemini account">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+        <action
+                id="com.tanisha.aigeminisignin.RunScanAction"
+                class="com.tanisha.aigeminisignin.RunScanAction"
+                text="Run Scan on Current File"
+                description="Run a scan on the currently open file">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow
+                id="AI Gemini Chat"
+                displayName="AI Gemini Chat"
+                anchor="right"
+                icon="/icons/gemini.svg"
+                factoryClass="com.tanisha.aigeminisignin.GeminiToolWindowFactory"/>
+        <projectService serviceImplementation="com.tanisha.aigeminisignin.GeminiChatHistoryService"/>
+    </extensions>
+
+</idea-plugin>
