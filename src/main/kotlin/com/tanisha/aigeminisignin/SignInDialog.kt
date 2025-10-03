@@ -93,7 +93,7 @@ class SignInDialog(private val projectRef: Project?) : DialogWrapper(projectRef)
             addActionListener { com.intellij.ide.BrowserUtil.browse("https://ai.google.dev/gemini-api/docs/api-key") }
         }
         panel.add(link, gbc)
-
+//temp
         gbc.gridy++
         testBtn = JButton("Test connection").apply {
             addActionListener { doTestConnection() }
